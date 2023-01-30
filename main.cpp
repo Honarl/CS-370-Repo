@@ -5,9 +5,9 @@ using namespace printer;
 
 int main(void)
 {
-    int testarray[5] {15, 5, 32, 1000, 500000000};
+    int testarray[5] {15, 5, 32, 500000000, 1000};
 
-    printerclass::print(testarray, sizeof(testarray));
+    printerclass::bubbleSort(testarray, sizeof(testarray));
 
     return 0;
 }

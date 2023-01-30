@@ -68,8 +68,13 @@ namespace printer
                     cout<<" ";
                 }
             }
+
+            //Going to try and add the same thing for stacks and queues soon
+
+            //End the stacks/queues section
+
             //bubble sort
-            static void bubbleSort(int testarray[], int size) 
+            static void bubbleSort(int testarray[], int size)
             {
                 int i,j,k,curr;
                 int len = size / sizeof(int);
