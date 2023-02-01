@@ -2,8 +2,6 @@
 #define PRINT_H_INCLUDED
 #include <iostream>
 #include "rogueutil.h"
-#include <stack>
-#include <queue>
 
 using namespace std;
 using namespace rogueutil;
@@ -72,139 +70,7 @@ namespace printer
             }
 
             //Going to try and add the same thing for stacks and queues soon
-            static void print(stack<int>& teststack){
-                stack<int> tempStack;
-                tempStack = teststack;
-                while (!tempStack.empty()){
-                    cout<<tempStack.top();
-                    tempStack.pop();
-                    cout<<endl;
-                }
-            }
-            static void print(stack<long>& teststack){
-                stack<long> tempStack;
-                tempStack = teststack;
-                while (!tempStack.empty()){
-                    cout<<tempStack.top();
-                    tempStack.pop();
-                    cout<<endl;
-                }
-            }
-            static void print(stack<float>& teststack){
-                stack<float> tempStack;
-                tempStack = teststack;
-                while (!tempStack.empty()){
-                    cout<<tempStack.top();
-                    tempStack.pop();
-                    cout<<endl;
-                }
-            }
-            static void print(stack<double>& teststack){
-                stack<double> tempStack;
-                tempStack = teststack;
-                while (!tempStack.empty()){
-                    cout<<tempStack.top();
-                    tempStack.pop();
-                    cout<<endl;
-                }
-            }
-            static void print(stack<char>& teststack){
-                stack<char> tempStack;
-                tempStack = teststack;
-                while (!tempStack.empty()){
-                    cout<<tempStack.top();
-                    tempStack.pop();
-                    cout<<endl;
-                }
-            }
-            static void print(stack<string>& teststack){
-                stack<string> tempStack;
-                tempStack = teststack;
-                while (!tempStack.empty()){
-                    cout<<tempStack.top();
-                    tempStack.pop();
-                    cout<<endl;
-                }
-            }
-            static void print(stack<bool>& teststack){
-                stack<bool> tempStack;
-                tempStack = teststack;
-                while (!tempStack.empty()){
-                    cout<<tempStack.top();
-                    tempStack.pop();
-                    cout<<endl;
-                }
-            }
-            static void print(queue<int>& testQueue){
-                queue<int> tempQueue;
-                tempQueue = testQueue;
-                cout<<"FIRST IN STACK -> ";
-                while (!tempQueue.empty()){
-                    cout<<tempQueue.front()<<" ";
-                    tempQueue.pop();
-                }
-                cout<<"<- LAST IN STACK"<<endl;
-            }
-            static void print(queue<long>& testQueue){
-                queue<long> tempQueue;
-                tempQueue = testQueue;
-                cout<<"FIRST IN STACK -> ";
-                while (!tempQueue.empty()){
-                    cout<<tempQueue.front()<<" ";
-                    tempQueue.pop();
-                }
-                cout<<"<- LAST IN STACK"<<endl;
-            }
-            static void print(queue<float>& testQueue){
-                queue<float> tempQueue;
-                tempQueue = testQueue;
-                cout<<"FIRST IN STACK -> ";
-                while (!tempQueue.empty()){
-                    cout<<tempQueue.front()<<" ";
-                    tempQueue.pop();
-                }
-                cout<<"<- LAST IN STACK"<<endl;
-            }
-            static void print(queue<double>& testQueue){
-                queue<double> tempQueue;
-                tempQueue = testQueue;
-                cout<<"FIRST IN STACK -> ";
-                while (!tempQueue.empty()){
-                    cout<<tempQueue.front()<<" ";
-                    tempQueue.pop();
-                }
-                cout<<"<- LAST IN STACK"<<endl;
-            }
-            static void print(queue<char>& testQueue){
-                queue<char> tempQueue;
-                tempQueue = testQueue;
-                cout<<"FIRST IN STACK -> ";
-                while (!tempQueue.empty()){
-                    cout<<tempQueue.front()<<" ";
-                    tempQueue.pop();
-                }
-                cout<<"<- LAST IN STACK"<<endl;
-            }
-            static void print(queue<string>& testQueue){
-                queue<string> tempQueue;
-                tempQueue = testQueue;
-                cout<<"FIRST IN STACK -> ";
-                while (!tempQueue.empty()){
-                    cout<<tempQueue.front()<<" ";
-                    tempQueue.pop();
-                }
-                cout<<"<- LAST IN STACK"<<endl;
-            }
-            static void print(queue<bool>& testQueue){
-                queue<bool> tempQueue;
-                tempQueue = testQueue;
-                cout<<"FIRST IN STACK -> ";
-                while (!tempQueue.empty()){
-                    cout<<tempQueue.front()<<" ";
-                    tempQueue.pop();
-                }
-                cout<<"<- LAST IN STACK"<<endl;
-            }
+
             //End the stacks/queues section
 
             //bubble sort
