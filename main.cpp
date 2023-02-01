@@ -16,7 +16,8 @@ int main(void)
 
     queue<string> testQueue;
     testQueue.push("TESTING");
-    testQueue.push("All your data types are give me pain");
+    testQueue.push("All 21 Data Types Are Give Me Pain");
+    testQueue.push("I'm not lying there are 21 overloads of one function");
     testQueue.push("CS 370");
     printerclass::print(testQueue);
 

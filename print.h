@@ -274,76 +274,117 @@ namespace printer
 
             //Going to try and add the same thing for stacks and queues soon
             static void print(stack<int>& teststack){
+                //Create a temporary stack to hold the info
                 stack<int> tempStack;
+                //Clone the input stack
                 tempStack = teststack;
                 while (!tempStack.empty()){
+                    //Spit out the top item of the temporary stack
                     cout<<tempStack.top();
+                    //Move through the stack
                     tempStack.pop();
+                    //Vertical formatting
                     cout<<endl;
                 }
             }
             static void print(stack<long>& teststack){
+                //Temporary info holding stack
                 stack<long> tempStack;
+                //Clone
                 tempStack = teststack;
                 while (!tempStack.empty()){
+                    //Spit out top item
                     cout<<tempStack.top();
+                    //Get rid of it
                     tempStack.pop();
+                    //Formatting
                     cout<<endl;
                 }
             }
             static void print(stack<float>& teststack){
+                //Make a temporary shell
                 stack<float> tempStack;
+                //Clone the passed one
                 tempStack = teststack;
                 while (!tempStack.empty()){
+                    //Give the the top item
                     cout<<tempStack.top();
+                    //Remove the top item
                     tempStack.pop();
+                    //Look like a stack
                     cout<<endl;
                 }
             }
             static void print(stack<double>& teststack){
+                //Temporary stack
                 stack<double> tempStack;
+                //Attack of the clones
                 tempStack = teststack;
                 while (!tempStack.empty()){
+                    //Spit the top out
                     cout<<tempStack.top();
+                    //KILL
                     tempStack.pop();
+                    //It's VERTICAL
                     cout<<endl;
                 }
             }
             static void print(stack<char>& teststack){
+                //Letter Stack
                 stack<char> tempStack;
+                //Skinwalker Stack
                 tempStack = teststack;
                 while (!tempStack.empty()){
+                    //Tell me what the stack do
                     cout<<tempStack.top();
+                    //Eliminate the top guy
                     tempStack.pop();
+                    //Straight line
                     cout<<endl;
                 }
             }
             static void print(stack<string>& teststack){
+                //New Temporary
                 stack<string> tempStack;
+                //Human cloning is unethical
                 tempStack = teststack;
                 while (!tempStack.empty()){
+                    //Find the first thing
                     cout<<tempStack.top();
+                    //Kill John Lennon
                     tempStack.pop();
+                    //John Lennon has his own line
                     cout<<endl;
                 }
             }
             static void print(stack<bool>& teststack){
+                //Make more bools
                 stack<bool> tempStack;
+                //Copy dem bools
                 tempStack = teststack;
                 while (!tempStack.empty()){
+                    //Tell me why
                     cout<<tempStack.top();
+                    //Damn that heartbreak killed him
                     tempStack.pop();
+                    //Uhhh line
                     cout<<endl;
                 }
             }
             static void print(queue<int>& testQueue){
+                //Make the temporary queue
                 queue<int> tempQueue;
+                //Clone the temporary queue
                 tempQueue = testQueue;
+                //Tell me who is first
                 cout<<"FIRST IN QUEUE -> ";
                 while (!tempQueue.empty()){
+                    //Puke out items separated by space
                     cout<<tempQueue.front()<<" ";
+                    //Kill it
                     tempQueue.pop();
                 }
+                //Tell me what's at the end and then endl for formatting
                 cout<<"<- LAST IN QUEUE"<<endl;
             }
             static void print(queue<long>& testQueue){
