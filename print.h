@@ -29,7 +29,7 @@ namespace printer
 			}
 			// print surrounding lines to array
 			template<typename T>
-			static void printTopNBot(T testarray[], int arraysize){
+			static void printTop(T testarray[], int arraysize){
 				int length = arraysize / sizeof(T);
 				int numlength[length] = {};
 				countDigits(testarray,numlength,length);
@@ -52,13 +52,38 @@ namespace printer
 				}
 				cout<<endl;
 			}
+						// print surrounding lines to array
+			template<typename T>
+			static void printBot(T testarray[], int arraysize){
+				int length = arraysize / sizeof(T);
+				int numlength[length] = {};
+				countDigits(testarray,numlength,length);
+				cout<<"+";
+				for(int i = 0; i < length; i++){
+					for(int y = 0; y < numlength[i]; y++){
+							cout<<"-";
+					}
+					cout<<"+";
+				}
+				cout<<endl;
+				cout<<" ";
+				for(int i = 0; i < length; i++){
+					for(int y = 0; y < numlength[i]; y++){
+						if( y == (numlength[i]/2))
+							cout<<i;
+						
+						cout<<" ";
+					}
+				}
+				cout<<endl;
+			}
 			// printing full structure
 			template<typename T>
             static void print(T testarray[], int arraysize)
             {
-				printTopNBot(testarray,arraysize);
+				printTop(testarray,arraysize);
 				printNums(testarray,arraysize);
-				printTopNBot(testarray,arraysize);
+				printBot(testarray,arraysize);
             }
 
             //Going to try and add the same thing for stacks and queues soon
@@ -68,14 +93,16 @@ namespace printer
                 stack<T> tempStack;
                 //Clone the input stack
                 tempStack = teststack;
+				cout<<"TOP"<<endl;
                 while (!tempStack.empty()){
                     //Spit out the top item of the temporary stack
-                    cout<<tempStack.top();
+                    cout<<"\t|"<<tempStack.top()<<"|";
                     //Move through the stack
                     tempStack.pop();
                     //Vertical formatting
                     cout<<endl;
-                }
+				}
+				cout<<"BOTTOM"<<endl;                
             }
 			template<typename T>
             static void printQueue(queue<T>& testQueue){
@@ -87,7 +114,7 @@ namespace printer
                 cout<<"FIRST IN QUEUE -> ";
                 while (!tempQueue.empty()){
                     //Puke out items separated by space
-                    cout<<tempQueue.front()<<" ";
+                    cout<<"("<<tempQueue.front()<<") ";
                     //Kill it
                     tempQueue.pop();
                 }
