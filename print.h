@@ -1,11 +1,13 @@
 #ifndef PRINT_H_INCLUDED
 #define PRINT_H_INCLUDED
 #include <iostream>
-#include <cmath>
+#include <limits>
 #include "rogueutil.h"
 #include <stack>
 #include <queue>
 #include <typeinfo>
+#include <string>
+#include <sstream>
 
 using namespace std;
 using namespace rogueutil;
@@ -15,19 +17,32 @@ namespace printer
     class printerclass
     {
         public:
+			// counting number of digits in each entry of array
+			template<typename T>
+			static void countDigits(T testarray[], int numlength[], int length){
+				for(int i = 0; i < length; i++){
+					ostringstream str1;				// output string stream
+					str1 << testarray[i];			// sending number to output as string
+					string number = str1.str();		// converting to string
+					numlength[i] = number.length(); // getting length
+				}	
+			}
+			// print surrounding lines to array
 			template<typename T>
 			static void printTopNBot(T testarray[], int arraysize){
 				int length = arraysize / sizeof(T);
-				//int numlength[length] = {};
+				int numlength[length] = {};
+				countDigits(testarray,numlength,length);
 				cout<<"+";
 				for(int i = 0; i < length; i++){
-					for(int y = 0; y < 10; y++){
+					for(int y = 0; y < numlength[i]; y++){
 						cout<<"-";
 					}
 					cout<<"+";
 				}
 				cout<<endl;
 			}
+			// printing numbers separated
 			template<typename T>
 			static void printNums(T testarray[], int arraysize){
 				arraysize /= sizeof(T);
@@ -37,14 +52,7 @@ namespace printer
 				}
 				cout<<endl;
 			}
-			// counting number of digits in each number
-/*			static void countDigits(int testarray[], int numlength[], int length){
-				for(int i = 0; i < length; i++){
-					string s = to_string(testarray[i]);
-					numlength[i] = s.length();
-				}
-			}
-*/	 
+			// printing full structure
 			template<typename T>
             static void print(T testarray[], int arraysize)
             {
