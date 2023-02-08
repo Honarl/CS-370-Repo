@@ -98,7 +98,8 @@ namespace printer
 
             //Going to try and add the same thing for stacks and queues soon
 			template<typename T>
-            static void printStack(stack<T>& teststack){
+            static void printStack(stack<T>& teststack)
+            {
                 //Create a temporary stack to hold the info
                 stack<T> tempStack;
                 //Clone the input stack
