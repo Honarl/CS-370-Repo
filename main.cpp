@@ -15,6 +15,7 @@ int main(void)
     testStack.push(12);
     printerclass::printStack(testStack);
 
+
     queue<string> testQueue;
     testQueue.push("TESTING");
     testQueue.push("All 21 Data Types Are Give Me Pain");
@@ -31,12 +32,12 @@ int main(void)
 	bool testbool[5] {0,0,1,1,0};
 
 	bubbleSort(testarray, sizeof(testarray));
-	printerclass::print(testlong, sizeof(testlong));
-	printerclass::print(testfloat, sizeof(testfloat));
-	printerclass::print(testdouble, sizeof(testdouble));
-	printerclass::print(testchar, sizeof(testchar));
-	printerclass::print(teststring, sizeof(teststring));
-	printerclass::print(testbool, sizeof(testbool));
+//	printerclass::print(testlong, sizeof(testlong));
+//	printerclass::print(testfloat, sizeof(testfloat));
+//	printerclass::print(testdouble, sizeof(testdouble));
+//	printerclass::print(testchar, sizeof(testchar));
+//	printerclass::print(teststring, sizeof(teststring));
+//	printerclass::print(testbool, sizeof(testbool));
 
     return 0;
 }
@@ -49,6 +50,8 @@ int main(void)
 		//Greet user
 		string user = getUsername();
 		cout << "Hi "<< user << ", heres your bubble sort\n";
+		cout<<"--Starting state--"<<endl;
+		printerclass::printArray(testarray, size);
 
 		//Sort array comparing index value with next Pos
 		for(i=0;i<=len-2;i++){
@@ -63,13 +66,7 @@ int main(void)
 					cout << "Press any key to advance...\n";
 					anykey();
 					cout << "\n--Current State--\n";
-					/*for(k=0; k<=len-1; k++){
-						if(testarray[k] == testarray[i] )
-							cout << testarray[k] << " ";
-						else
-							cout << testarray[k] << " ";
-					}*/
-					    printerclass::print(testarray, size);
+				    printerclass::printArray(testarray, size);
 					cout << "\n";
 				}
 			}
