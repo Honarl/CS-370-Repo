@@ -33,6 +33,7 @@ namespace printer
 				int length = arraysize / sizeof(T);
 				int numlength[length] = {};
 				countDigits(testarray,numlength,length);
+				setColor(GREEN);
 				cout<<"+";
 				for(int i = 0; i < length; i++){
 					for(int y = 0; y < numlength[i]; y++){
@@ -41,14 +42,20 @@ namespace printer
 					cout<<"+";
 				}
 				cout<<endl;
+				setColor(WHITE);
 			}
 			// printing numbers separated
 			template<typename T>
 			static void printNums(T testarray[], int arraysize){
 				arraysize /= sizeof(T);
+				setColor(GREEN);
 				cout<<"|";
+				setColor(WHITE);
 				for(int i = 0; i < arraysize; i++){
-					cout<<testarray[i]<<"|";
+					cout<<testarray[i];
+					setColor(GREEN);
+					cout<<"|";
+					setColor(WHITE);
 				}
 				cout<<endl;
 			}
@@ -58,6 +65,7 @@ namespace printer
 				int length = arraysize / sizeof(T);
 				int numlength[length] = {};
 				countDigits(testarray,numlength,length);
+				setColor(GREEN);
 				cout<<"+";
 				for(int i = 0; i < length; i++){
 					for(int y = 0; y < numlength[i]; y++){
@@ -65,6 +73,7 @@ namespace printer
 					}
 					cout<<"+";
 				}
+				setColor(LIGHTGREEN);
 				cout<<endl;
 				cout<<" ";
 				for(int i = 0; i < length; i++){
@@ -76,10 +85,11 @@ namespace printer
 					}
 				}
 				cout<<endl;
+				setColor(WHITE);
 			}
 			// printing full structure
 			template<typename T>
-            static void print(T testarray[], int arraysize)
+            static void printArray(T testarray[], int arraysize)
             {
 				printTop(testarray,arraysize);
 				printNums(testarray,arraysize);
@@ -93,7 +103,9 @@ namespace printer
                 stack<T> tempStack;
                 //Clone the input stack
                 tempStack = teststack;
-				cout<<"TOP"<<endl;
+				colorPrint(RED,NOCOLOR,"TOP");
+				setColor(WHITE);
+				cout<<endl;
                 while (!tempStack.empty()){
                     //Spit out the top item of the temporary stack
                     cout<<"\t|"<<tempStack.top()<<"|";
@@ -102,7 +114,9 @@ namespace printer
                     //Vertical formatting
                     cout<<endl;
 				}
-				cout<<"BOTTOM"<<endl;                
+				colorPrint(RED,NOCOLOR,"BOTTOM");
+				setColor(WHITE);
+				cout<<endl;                
             }
 			template<typename T>
             static void printQueue(queue<T>& testQueue){
@@ -111,7 +125,8 @@ namespace printer
                 //Clone the temporary queue
                 tempQueue = testQueue;
                 //Tell me who is first
-                cout<<"FIRST IN QUEUE -> ";
+                colorPrint(CYAN,NOCOLOR,"FIRST IN QUEUE -> ");
+				setColor(WHITE);
                 while (!tempQueue.empty()){
                     //Puke out items separated by space
                     cout<<"("<<tempQueue.front()<<") ";
@@ -119,12 +134,13 @@ namespace printer
                     tempQueue.pop();
                 }
                 //Tell me what's at the end and then endl for formatting
-                cout<<"<- LAST IN QUEUE"<<endl;
+                colorPrint(CYAN,NOCOLOR,"<- LAST IN QUEUE");
+				setColor(WHITE);
+				cout<<endl;
             }
  
             //End the stacks/queues section
-
-            
+ 
     };
 }
 
