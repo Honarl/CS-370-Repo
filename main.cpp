@@ -28,8 +28,8 @@ int main(void)
 	
 	anykey();
 
-    int testint[5] {15, 5, 32, 500000000, 1000};
-	float testfloat[5] {5.2,64.875,349.22222,0.27943,1000000.3168};
+    int testint[5] = {15, 5, 32, 500000000, 1000};
+	float testfloat[5] = {5.2,64.875,349.22222,0.27943,1000000.3168};
 
 
 	printerclass::printArray(testfloat, sizeof(testfloat));

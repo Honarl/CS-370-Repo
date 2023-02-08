@@ -31,7 +31,7 @@ namespace printer
 			template<typename T>
 			static void printTop(T testarray[], int arraysize){
 				int length = arraysize / sizeof(T);
-				int numlength[length] = {};
+				int numlength[length];
 				countDigits(testarray,numlength,length);
 				setColor(GREEN);
 				cout<<"+";
@@ -63,7 +63,7 @@ namespace printer
 			template<typename T>
 			static void printBot(T testarray[], int arraysize){
 				int length = arraysize / sizeof(T);
-				int numlength[length] = {};
+				int numlength[length];
 				countDigits(testarray,numlength,length);
 				setColor(GREEN);
 				cout<<"+";
