@@ -55,18 +55,28 @@ namespace printer
 
             //Going to try and add the same thing for stacks and queues soon
 			template<typename T>
-            static void printStack(stack<T>& teststack){
+            static void printStack(stack<T>& teststack)
+            {
                 //Create a temporary stack to hold the info
                 stack<T> tempStack;
                 //Clone the input stack
                 tempStack = teststack;
+                //Display the top of Stack
+                cout <<tempStack.top() << " <--- Top of Stack\n";
+                tempStack.pop();
                 while (!tempStack.empty()){
+                    //Display the bottom of the Stack
+                    if(tempStack.size() == 1){
+                        cout << tempStack.top() << " <--- Bottom of Stack\n";
+                        tempStack.pop();
+                        break;
+                        }
                     //Spit out the top item of the temporary stack
-                    cout<<tempStack.top();
+                    std::cout<<tempStack.top();
                     //Move through the stack
                     tempStack.pop();
                     //Vertical formatting
-                    cout<<endl;
+                    std::cout << "\n";
                 }
             }
 			template<typename T>
