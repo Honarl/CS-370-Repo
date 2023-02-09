@@ -21,7 +21,7 @@ int main(void)
     queue<string> testQueue;
     testQueue.push("TESTING");
     testQueue.push("All 21 Data Types Are Give Me Pain");
-    testQueue.push("I'm not lying there were are 21 overloads of one function");
+    testQueue.push("I'm not lying there were 21 overloads of one function");
     testQueue.push("CS 370");
     printerclass::printQueue(testQueue);
 	cout<<endl;
